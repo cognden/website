@@ -1,89 +1,91 @@
 # 基础站点设置
-baseURL                = 'https://qisrepo.top/'  # 站点的根 URL
-languageCode           = 'zh'                    # 默认语言编码
-defaultContentLanguage = 'zh'                    # 内容默认语言
-title                  = 'QisRepo'               # 网站标题
-theme                  = "PaperMod"              # 使用的主题
-enableRobotsTXT        = true                    # 是否启用 robots.txt
+baseURL                        = "https://qisrepo.top/"
+languageCode                   = "zh"
+defaultContentLanguage         = "zh"
+title                          = "QisRepo"
+theme                          = "PaperMod"
+enableRobotsTXT                = true
 
 # 主题参数配置
 [params]
   title        = "QisRepo"
-  description  = "Qi's repository, which is used to store personal results"  # 简介信息
-  keywords     = ["Blog", "Portfolio", "IT"]     # SEO 关键词
-  DateFormat   = "2006-01-02"                    # 日期格式
-  defaultTheme = "auto"                          # 主题模式（light/dark/auto）
+  description  = "Qi's repository, which is used to store personal results"
+  keywords     = ["Blog", "Portfolio", "IT"]
+  DateFormat   = "2006-01-02"
+  defaultTheme = "auto"
 
-  ShowReadingTime     = true                     # 显示阅读时间
-  ShowPostNavLinks    = true                     # 显示上下篇导航链接
-  ShowBreadCrumbs     = true                     # 显示面包屑导航
-  ShowCodeCopyButtons = false                    # 显示代码复制按钮
-  disableScrollToTop  = false                    # 禁用返回顶部按钮
-  hideSummary         = false                    # 隐藏文章摘要
+  ShowReadingTime     = true  # 显示阅读时间
+  ShowPostNavLinks    = true  # 显示上下篇导航链接
+  ShowBreadCrumbs     = true  # 显示面包屑导航
+  ShowCodeCopyButtons = false # 显示代码复制按钮
+  disableScrollToTop  = false # 禁用返回顶部按钮
+  hideSummary         = false # 隐藏文章摘要
 
   # 网站图标设置
   [assets]
-    favicon = "/favicon.ico"
-    favicon16x16 = "/favicon-16x16.png"
-    favicon32x32 = "/favicon-32x32.png"
+    favicon          = "/favicon.ico"
+    favicon16x16     = "/favicon-16x16.png"
+    favicon32x32     = "/favicon-32x32.png"
     apple_touch_icon = "/apple-touch-icon.png"
 
   # 首页欢迎信息
   [params.homeInfoParams]
-    Title   = "Hi there \U0001F44B"              # 首页欢迎语标题
-    Content = "Welcome to my blog"               # 首页欢迎内容
+    Title   = "Hi there \U0001F44B" # 首页欢迎语标题
+    Content = "Welcome to my blog"  # 首页欢迎内容
 
   # 封面图片设置（隐藏）
   [params.cover]
-    hidden         = true                        # 在首页隐藏封面
-    hiddenInList   = true                        # 在列表中隐藏
-    hiddenInSingle = true                        # 在单篇文章中隐藏
+    hidden         = true # 在首页隐藏封面
+    hiddenInList   = true # 在列表中隐藏
+    hiddenInSingle = true # 在单篇文章中隐藏
 
   # 搜索配置
   [fuseOpts]
-    isCaseSensitive    = false                   # 不区分大小写
-    shouldSort         = true                    # 搜索结果排序
-    location           = 0                       # 匹配位置偏移量
-    distance           = 1000                    # 字符间允许的最大距离
-    threshold          = 0.4                     # 匹配阈值
-    minMatchCharLength = 0                       # 最小匹配字符长度
-    limit              = 10                      # 返回最大搜索结果数
-    keys               = ["title", "permalink", "summary", "content"]  # 搜索字段
-
-# 菜单配置
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name       = "文章"
-    url        = "/posts/"
-    weight     = 1
-  [[menu.main]]
-    identifier = "tags"
-    name       = "标签"
-    url        = "/tags/"
-    weight     = 2
-  # [[menu.main]]
-  #   identifier = "about"
-  #   name = "关于"
-  #   url = "/about/"
-  #   weight = 3
-  [[menu.main]]
-    identifier = "search"
-    name       = "🔍︎"
-    url        = "/search/"
-    weight     = 4
+    isCaseSensitive    = false                                        # 不区分大小写
+    shouldSort         = true                                         # 搜索结果排序
+    location           = 0                                            # 匹配位置偏移量
+    distance           = 1000                                         # 字符间允许的最大距离
+    threshold          = 0.4                                          # 匹配阈值
+    minMatchCharLength = 0                                            # 最小匹配字符长度
+    limit              = 10                                           # 返回最大搜索结果数
+    keys               = ["title", "permalink", "summary", "content"] # 搜索字段
 
 # 多语言支持
 [languages]
   [languages.zh]
+    contentDir = "content/zh"
     languageCode = "zh"
     languageName = "简体中文"
     weight       = 1
 
+    [languages.zh.menu]
+      [[languages.zh.menu.main]]
+        weight     = 1
+        identifier = "posts"
+        name       = "文章"
+        url        = "/posts/"
+      [[languages.zh.menu.main]]
+        weight     = 2
+        identifier = "tags"
+        name       = "标签"
+        url        = "/tags/"
+      # [[languages.zh.menu.main]]
+      #   weight = 3
+      #   identifier = "about"
+      #   name = "Tentang"
+      #   url = "/about/"
+      [[languages.zh.menu.main]]
+        identifier = "search"
+        name       = "🔍︎"
+        url        = "/search/"
+        weight     = 4
+
   [languages.id]
+    contentDir = "content/id"
     languageCode = "id"
     languageName = "Bahasa Indonesia"
     weight       = 2
+
     [languages.id.menu]
       [[languages.id.menu.main]]
         weight     = 1
@@ -107,9 +109,11 @@ enableRobotsTXT        = true                    # 是否启用 robots.txt
         weight     = 4
 
   [languages.en]
+    contentDir = "content/en"
     languageCode = "en"
     languageName = "English"
     weight       = 3
+
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "posts"
@@ -135,8 +139,8 @@ enableRobotsTXT        = true                    # 是否启用 robots.txt
 # Markdown 渲染器配置
 [markup]
   [markup.goldmark.renderer]
-    unsafe = true                                 # 允许渲染原始 HTML
+    unsafe = true # 允许渲染原始 HTML
 
 # 输出格式配置
 [outputs]
-  home = ["HTML", "RSS", "JSON"]                 # 首页输出格式
+  home = ["HTML", "RSS", "JSON"] # 首页输出格式
