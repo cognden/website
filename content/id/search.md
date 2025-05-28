@@ -2,5 +2,5 @@
 title: "Pencarian"
 layout: "search"
 summary: "search"
-placeholder: "这里可以输入..."
+placeholder: "Anda bisa memasukkan teks di sini..."
 ---
