@@ -30,8 +30,14 @@ enableRobotsTXT                = true
 
   # 首页欢迎信息
   [params.homeInfoParams]
-    Title   = "Hi there \U0001F44B" # 首页欢迎语标题
-    Content = "Welcome to my blog"  # 首页欢迎内容
+    Title   = "Below are my friend's words" # 首页欢迎语标题
+    Content = """
+- Think positive, no matter how hard your life is.
+- God does not look at your appearance and possessions, but He looks at your heart and actions.
+- A rational human being is a human being who likes to receive and ask for advice.
+- This world is like a shadow. If you try to catch it, it will run away. But if you turn your back on him, he has no choice but to follow you.
+<p align="left">-- Rindi Juhanah</p>
+    """  # 首页欢迎内容
 
   # 封面图片设置（隐藏）
   [params.cover]
