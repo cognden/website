@@ -30,14 +30,13 @@ enableRobotsTXT                = true
 
   # 首页欢迎信息
   [params.homeInfoParams]
-    Title   = "Below are my friend's words" # 首页欢迎语标题
     Content = """
 > - Think positive, no matter how hard your life is.
 > - God does not look at your appearance and possessions, but He looks at your heart and actions.
 > - A rational human being is a human being who likes to receive and ask for advice.
 > - This world is like a shadow. If you try to catch it, it will run away. But if you turn your back on him, he has no choice but to follow you.
 > <p style="text-align: right;">—— Rindi Juhanah</p>
-    """  # 首页欢迎内容
+    """
 
   # 封面图片设置（隐藏）
   [params.cover]
@@ -63,6 +62,9 @@ enableRobotsTXT                = true
     languageCode = "zh"
     languageName = "简体中文"
     weight       = 1
+
+    [languages.zh.params.homeInfoParams]
+      Title = "感谢你送予我的话："
 
     [languages.zh.menu]
       [[languages.zh.menu.main]]
@@ -92,6 +94,9 @@ enableRobotsTXT                = true
     languageName = "Bahasa Indonesia"
     weight       = 2
 
+    [languages.id.params.homeInfoParams]
+      Title = "Terima kasih untuk kata-kata yang telah kamu bagikan:"
+
     [languages.id.menu]
       [[languages.id.menu.main]]
         weight     = 1
@@ -119,6 +124,9 @@ enableRobotsTXT                = true
     languageCode = "en"
     languageName = "English"
     weight       = 3
+
+    [languages.en.params.homeInfoParams]
+      Title   = "Thank you for the words you've shared:"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
