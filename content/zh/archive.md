@@ -1,6 +1,6 @@
 ---
 title: "文章"
 layout: "archives"
-url: "/posts"
-summary: archives
+url: "/zh/posts"
+summary: "archives"
 ---

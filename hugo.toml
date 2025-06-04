@@ -2,6 +2,7 @@
 baseURL                        = "https://qisrepo.top/"
 languageCode                   = "zh"
 defaultContentLanguage         = "zh"
+defaultContentLanguageInSubdir = true
 title                          = "QisRepo"
 theme                          = "PaperMod"
 enableRobotsTXT                = true
