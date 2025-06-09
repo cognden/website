@@ -4,7 +4,7 @@ languageCode                   = "zh"
 defaultContentLanguage         = "zh"
 defaultContentLanguageInSubdir = true
 title                          = "QisRepo"
-theme                          = "PaperMod"
+theme                          = ["hugo-admonitions", "PaperMod"]
 enableRobotsTXT                = true
 
 # 主题参数配置
