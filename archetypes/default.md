@@ -3,9 +3,9 @@ title: {{ replace .File.ContentBaseName "-" " " | title }}
 date: {{ .Date }}
 tags: ["draft"]
 showToc: true
-TocOpen: false
+TocOpen: true
 draft: false
-# description: "Desc Text."
+description: "Desc Text."
 summary: "Summarize text manually."
 cover:
     image: "<image path/url>" # image path/url
