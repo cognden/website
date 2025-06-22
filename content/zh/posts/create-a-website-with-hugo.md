@@ -1,14 +1,13 @@
 ---
 title: 使用 HUGO 搭建网站
-date: 2025-06-05T03:47:30+08:00
+date: 2025-06-22T09:54:23+08:00
 tags:
   - 日志
   - hugo
+showToc: true
+TocOpen: true
 draft: false
-summary: 本篇文章将详细介绍如何使用 Hugo 搭建一个静态网站，并以 PaperMod 主题为例讲解主题安装与配置、多语言支持。
----
-本篇文章将介绍如何使用 Hugo 搭建一个静态网站，并以 **PaperMod 主题** 为例讲解主题安装与配置、多语言支持。
-
+summary: 本篇文章将介绍如何使用 Hugo 搭建一个静态网站，并配置 PaperMod 主题。
 ---
 
 ## 安装 Hugo 并创建网站
@@ -132,7 +131,7 @@ theme                  = "PaperMod"
 这些配置项定义了网站的基本信息，例如标题、语言和主题等。其中：
 
 - `baseURL` 是部署时使用的域名。
-- `languageCode` 和 `defaultContentLanguage` 控制网站的语言环境。
+- `languageCode` 控制网站的语言环境。
 - `title` 显示在浏览器标签页上。
 - `theme` 指定要使用的主题。
 
@@ -190,27 +189,16 @@ theme                  = "PaperMod"
 
 以上配置会生成三个菜单项：“文章”、“标签”和“搜索”，并按权重排序。
 
-- **identifier**：给这个菜单项起个唯一的名字（ID），方便程序识别和使用
-- **name**：这是显示在网页上的名字，用户会看到“文章”这两个字
-- **url**：点击这个菜单项后跳转的网址，这里是网站内的“文章列表页”
-- **weight**：设置排序顺序，数字越小排得越靠前，这里设为第一项
+- **identifier**：给这个菜单项起个唯一的名字（ID），方便程序识别和使用。
+- **name**：这是显示在网页上的名字，用户会看到“文章”这两个字。
+- **url**：点击这个菜单项后跳转的网址，这里是网站内的“文章列表页”。
+- **weight**：设置排序顺序，数字越小排得越靠前。
 
-#### 附加修改
+### 搜索页面创建
 
-现在“文章‘和”搜索“界面还是处于 404 状态中，因为 PaperMod 只内置了标签页面，无需手动创建。
+现在”搜索“界面还是处于 404 状态中，因为 PaperMod 只内置了标签页面，无需手动创建。
 
-为了避免这种情况，我们需要在 `content/` 目录下，新建 `archive.md`、`search.md` 两个文件，并添加如下配置：
-
-- `archive.md`
-
-```yaml
----
-title: "文章"
-layout: "archives"
-url: "/posts"
-summary: "文章列表"
----
-```
+为了避免这种情况，我们需要在 `content/` 目录下，新建 `search.md` 文件，并添加如下配置：
 
 - `search.md`
 
@@ -225,7 +213,6 @@ placeholder: "这里可以输入..."
 
 - **title**：设置该页面的标题。
 - **layout**：指定该页面使用的布局模板。
-- **url**：自定义该页面的访问路径。
 - **summary**：提供该页面的简要描述。
 - **placeholder**：设置页面中搜索框的占位符文本。
 
@@ -239,6 +226,8 @@ placeholder: "这里可以输入..."
 ```
 
 > 这样，首页不仅会生成 HTML 页面，还会提供 RSS 订阅和 JSON 数据接口。
+
+---
 
 到这里，网站已经配置完成，可以上传到诸如 GitHub Pages、Cloudflare Pages、Netlify 等平台进行部署，详细过程请参考 [Host and deploy | HUGO](https://gohugo.io/host-and-deploy/)。
 
@@ -305,16 +294,16 @@ placeholder: "这里可以输入..."
 
 ### 创建多语言页面文件
 
-默认情况下，Hugo 的 `content/` 目录下的页面是通用的。为了支持多语言，我们需要为每种语言单独创建对应的页面文件。
+为了支持多语言，我们需要为每种语言单独创建对应的页面文件。
 
 根据 [Multilingual mode | HUGO](https://gohugo.io/content-management/multilingual/#translate-your-content) 官网文档描述，可以通过两种方法创建，并管理日后的文章：
 
 1. 使用文件名区分
-   - `/content/archive.en.md`
-   - `/content/archive.zh.md`
+	- `/content/search.zh.md`
+	- `/content/search.en.md`
 2. 使用目录区分
-   - `/content/en/archive.md`
-   - `/content/zh/archive.md`
+	- `/content/zh/search.md`
+	- `/content/en/search.md`
 
 选择哪种方式创建，取决于个人喜好。这里我们选择“目录”形式，而使用文件名则无需配置，直接将对应语言的文件名添加相应的语言代码即可，所以对目录形式的配置进行着重讲解。
 
@@ -322,35 +311,37 @@ placeholder: "这里可以输入..."
 
 ```
 content/
-├── en/
-│   ├── archive.md   # 英文版文章列表页
-│   └── search.md    # 英文版搜索页
-└── zh/
-    ├── archive.md   # 中文版文章列表页
-    └── search.md    # 中文版搜索页
+├── zh/
+│   └── search.md    # 中文版搜索页
+└── en/
+    └── search.md    # 英文版搜索页
 ```
 
 分别编辑对应语言的页面文件，例如：
 
-- `zh/archive.md`：
+- `zh/search.md`：
 
   ```yaml
-  ---
-  title: "文章"
-  layout: "archives"
-  url: "/zh/posts"
-  summary: "文章列表"
-  ---
+
+---
+
+title: " 搜索 "
+layout: "search"
+summary: " 搜索页面 "
+placeholder: " 这里可以输入..."
+---
+
   ```
-- `en/archive.md`：
+
+- `en/search.md`：
 
   ```yaml
-  ---
-  title: "Posts"
-  layout: "archives"
-  url: "/en/posts"
-  summary: "Archives of all posts."
-  ---
+---
+title: "Search"
+layout: "search"
+summary: "Search page"
+placeholder: "You can type here..."
+---
   ```
 
 然后对 `hugo.toml` 做最后的修改，设置默认显示语言，以及指定各语言所在目录。
@@ -383,7 +374,7 @@ theme                  = "PaperMod"
       ...
 ```
 
-> 在 `defaultContentLanguage` 属性后面，可以继续添加 `defaultContentLanguageInSubdir = true` 开启默认语言内容生成在子目录中。
+> **提示**：在 `defaultContentLanguage` 属性后面，可以继续添加 `defaultContentLanguageInSubdir = true` 开启默认语言内容生成在子目录中。
 
 ## 参考
 
