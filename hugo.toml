@@ -15,7 +15,7 @@ enableRobotsTXT                = true
   DateFormat   = "2006-01-02"
   defaultTheme = "auto"
 
-  ShowReadingTime     = true  # 显示阅读时间
+  ShowReadingTime     = false  # 显示阅读时间
   ShowPostNavLinks    = true  # 显示上下篇导航链接
   ShowBreadCrumbs     = true  # 显示面包屑导航
   ShowCodeCopyButtons = false # 显示代码复制按钮
