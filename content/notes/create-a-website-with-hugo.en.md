@@ -60,62 +60,64 @@ At this time, you can visit `http://localhost:1313/` in the browser to preview t
 
 Hugo's core configuration file is `hugo.toml`, which determines the basic behavior of the website. We can modify it as needed.
 
-> [!example]- Here is the complete configuration
->
-> ```toml
-> # Basic global configuration of the website
-> baseURL                = "https://example.org/" # Sets the root URL of the website for generating absolute links; should be changed to the actual domain name when deploying
-> languageCode           = "en"                   # Specifies the language code of the website content, used for the HTML lang attribute and language-related settings
-> title                  = "ExampleSite"          # The main title of the website, usually displayed in the browser tab and on the homepage
-> theme                  = "PaperMod"             # The name of the theme to use, determining the website's appearance style
-> 
-> # Resource configuration for website icons, used to define website icons of different sizes and purposes
-> [assets]
->   # Icons are placed in the static/ directory
->   favicon          = "/favicon.ico"          # The main favicon icon, usually displayed on the browser tab
->   favicon16x16     = "/favicon-16x16.png"    # 16x16 pixel-sized favicon, suitable for low-resolution devices
->   favicon32x32     = "/favicon-32x32.png"    # 32x32 pixel-sized favicon, providing a higher-definition display
->   apple_touch_icon = "/apple-touch-icon.png" # The icon used when adding to the home screen on Apple devices
-> 
-> # Theme parameter configuration, affecting the website's appearance and functional behavior
-> [params]
->   # SEO-related settings, helpful for search engine optimization
->   title       = "ExampleSite"             # Sets the website title, displayed in browser tabs and search engine results
->   description = "ExampleSite description" # A brief description of the website, used for search engine summary display
->   keywords    = ["Blog", "Portfolio"]     # Defines a list of keywords related to the website to enhance search relevance
-> 
->   # Basic website behavior configuration
->   DateFormat   = "2006-01-02" # Sets the date formatting style, used for displaying time fields such as article publication times
->   defaultTheme = "auto"       # Sets the default theme mode: "auto" means following the system's light/dark setting, or it can be set to "light" or "dark"
-> 
->   # Home page welcome information
->   [params.homeInfoParams]
->     Title   = "Hi there 👋"
->     Content = "Welcome to my blog"
-> 
-> # Global navigation menu configuration, applicable to main menu items in all language environments
-> [menu]
->   [[menu.main]] # Defines a main menu item
->     identifier = "posts"   # Menu item identifier
->     name       = "Posts"      # Menu item name
->     url        = "/posts/" # Menu item link
->     weight     = 1         # Menu item weight, used for sorting
->   [[menu.main]]
->     identifier = "tags"
->     name       = "Tags"
->     url        = "/tags/"
->     weight     = 2
->   [[menu.main]]
->     identifier = "search"
->     name       = "Search"
->     url        = "/search/"
->     weight     = 3
-> 
-> # Output format settings
-> [outputs]
->   # Provides support for the search function
->   home = ["HTML", "RSS", "JSON"]
-> ```
+{{% details title="Here is the complete configuration" closed="true" %}}
+
+```toml
+# Basic global configuration of the website
+baseURL                = "https://example.org/" # Sets the root URL of the website for generating absolute links; should be changed to the actual domain name when deploying
+languageCode           = "en"                   # Specifies the language code of the website content, used for the HTML lang attribute and language-related settings
+title                  = "ExampleSite"          # The main title of the website, usually displayed in the browser tab and on the homepage
+theme                  = "PaperMod"             # The name of the theme to use, determining the website's appearance style
+
+# Resource configuration for website icons, used to define website icons of different sizes and purposes
+[assets]
+  # Icons are placed in the static/ directory
+  favicon          = "/favicon.ico"          # The main favicon icon, usually displayed on the browser tab
+  favicon16x16     = "/favicon-16x16.png"    # 16x16 pixel-sized favicon, suitable for low-resolution devices
+  favicon32x32     = "/favicon-32x32.png"    # 32x32 pixel-sized favicon, providing a higher-definition display
+  apple_touch_icon = "/apple-touch-icon.png" # The icon used when adding to the home screen on Apple devices
+
+# Theme parameter configuration, affecting the website's appearance and functional behavior
+[params]
+  # SEO-related settings, helpful for search engine optimization
+  title       = "ExampleSite"             # Sets the website title, displayed in browser tabs and search engine results
+  description = "ExampleSite description" # A brief description of the website, used for search engine summary display
+  keywords    = ["Blog", "Portfolio"]     # Defines a list of keywords related to the website to enhance search relevance
+
+  # Basic website behavior configuration
+  DateFormat   = "2006-01-02" # Sets the date formatting style, used for displaying time fields such as article publication times
+  defaultTheme = "auto"       # Sets the default theme mode: "auto" means following the system's light/dark setting, or it can be set to "light" or "dark"
+
+  # Home page welcome information
+  [params.homeInfoParams]
+    Title   = "Hi there 👋"
+    Content = "Welcome to my blog"
+
+# Global navigation menu configuration, applicable to main menu items in all language environments
+[menu]
+  [[menu.main]] # Defines a main menu item
+    identifier = "posts"   # Menu item identifier
+    name       = "Posts"      # Menu item name
+    url        = "/posts/" # Menu item link
+    weight     = 1         # Menu item weight, used for sorting
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags/"
+    weight     = 2
+  [[menu.main]]
+    identifier = "search"
+    name       = "Search"
+    url        = "/search/"
+    weight     = 3
+
+# Output format settings
+[outputs]
+  # Provides support for the search function
+  home = ["HTML", "RSS", "JSON"]
+```
+
+{{% /details %}}
 
 #### Website Basic Information Settings
 

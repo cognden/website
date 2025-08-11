@@ -1,161 +1,71 @@
-# 基础站点设置
-baseURL                        = "https://qisrepo.top/"
-languageCode                   = "zh"
-defaultContentLanguage         = "zh"
-defaultContentLanguageInSubdir = true
-title                          = "QisRepo"
-theme                          = ["hugo-admonitions", "PaperMod"]
-enableRobotsTXT                = true
+baseURL      = 'https://qisrepo.top/'
+languageCode = 'zh-CN'
+title        = 'QisRepo'
+theme        = "hextra"
 
-# 主题参数配置
-[params]
-  title        = "QisRepo"
-  description  = "Qi's repository, which is used to store personal results"
-  keywords     = ["Blog", "Portfolio", "IT"]
-  DateFormat   = "2006-01-02"
-  defaultTheme = "auto"
+defaultContentLanguage = "zh-CN"
 
-  ShowReadingTime     = false  # 显示阅读时间
-  ShowPostNavLinks    = true  # 显示上下篇导航链接
-  ShowBreadCrumbs     = true  # 显示面包屑导航
-  ShowCodeCopyButtons = false # 显示代码复制按钮
-  disableScrollToTop  = false # 禁用返回顶部按钮
-  hideSummary         = false # 隐藏文章摘要
+enableRobotsTXT = true
+# Parse Git commit
+enableGitInfo  = true
+enableEmoji    = true
+hasCJKLanguage = true
 
-  # 网站图标设置
-  [assets]
-    favicon          = "/favicon.ico"
-    favicon16x16     = "/favicon-16x16.png"
-    favicon32x32     = "/favicon-32x32.png"
-    apple_touch_icon = "/apple-touch-icon.png"
+enableInlineShortcodes = true
 
-  # 首页欢迎信息
-  [params.homeInfoParams]
-    Content = """
-> - Think positive, no matter how hard your life is.
-> - God does not look at your appearance and possessions, but He looks at your heart and actions.
-> - A rational human being is a human being who likes to receive and ask for advice.
-> - This world is like a shadow. If you try to catch it, it will run away. But if you turn your back on him, he has no choice but to follow you.
-> <p style="text-align: right;">—— Rindi Juhanah</p>
-    """
+[outputs]
+  home    = ["html", "llms"]
+  page    = ["html"]
+  section = ["html", "rss"]
 
-  # 封面图片设置（隐藏）
-  [params.cover]
-    hidden         = true # 在首页隐藏封面
-    hiddenInList   = true # 在列表中隐藏
-    hiddenInSingle = true # 在单篇文章中隐藏
-
-  # 搜索配置
-  [fuseOpts]
-    isCaseSensitive    = false                                        # 不区分大小写
-    shouldSort         = true                                         # 搜索结果排序
-    location           = 0                                            # 匹配位置偏移量
-    distance           = 1000                                         # 字符间允许的最大距离
-    threshold          = 0.4                                          # 匹配阈值
-    minMatchCharLength = 0                                            # 最小匹配字符长度
-    limit              = 10                                           # 返回最大搜索结果数
-    keys               = ["title", "permalink", "summary", "content"] # 搜索字段
-
-# 多语言支持
 [languages]
-  [languages.zh]
-    contentDir = "content/zh"
-    languageCode = "zh"
-    languageName = "简体中文"
-    weight       = 1
-
-    [languages.zh.params.homeInfoParams]
-      Title = "感谢你送予我的话："
-
-    [languages.zh.menu]
-      [[languages.zh.menu.main]]
-        weight     = 1
-        identifier = "posts"
-        name       = "文章"
-        url        = "/posts/"
-      [[languages.zh.menu.main]]
-        weight     = 2
-        identifier = "tags"
-        name       = "标签"
-        url        = "/tags/"
-      # [[languages.zh.menu.main]]
-      #   weight = 3
-      #   identifier = "about"
-      #   name = "Tentang"
-      #   url = "/about/"
-      [[languages.zh.menu.main]]
-        identifier = "search"
-        name       = "🔍︎"
-        url        = "/search/"
-        weight     = 4
-
-  [languages.id]
-    contentDir = "content/id"
-    languageCode = "id"
-    languageName = "Bahasa Indonesia"
-    weight       = 2
-
-    [languages.id.params.homeInfoParams]
-      Title = "Terima kasih untuk kata-kata yang telah kamu bagikan:"
-
-    [languages.id.menu]
-      [[languages.id.menu.main]]
-        weight     = 1
-        identifier = "posts"
-        name       = "Tentang"
-        url        = "/posts/"
-      [[languages.id.menu.main]]
-        weight     = 2
-        identifier = "tags"
-        name       = "Tags"
-        url        = "/tags/"
-      # [[languages.id.menu.main]]
-      #   weight = 3
-      #   identifier = "about"
-      #   name = "Tentang"
-      #   url = "/about/"
-      [[languages.id.menu.main]]
-        identifier = "search"
-        name       = "🔍︎"
-        url        = "/search/"
-        weight     = 4
-
   [languages.en]
-    contentDir = "content/en"
-    languageCode = "en"
     languageName = "English"
+    languageCode = "en"
+    weight       = 1
+  [languages.id]
+    languageName = "Indonesian"
+    languageCode = "id"
+    weight       = 2
+  [languages.zh-cn]
+    languageName = "简体中文"
+    languageCode = "zh-CN"
     weight       = 3
 
-    [languages.en.params.homeInfoParams]
-      Title   = "Thank you for the words you've shared:"
-
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "posts"
-        name       = "Posts"
-        url        = "/posts/"
-        weight     = 1
-      [[languages.en.menu.main]]
-        identifier = "tags"
-        name       = "Tags"
-        url        = "/tags/"
-        weight     = 2
-      # [[languages.en.menu.main]]
-      #   identifier = "about"
-      #   name       = "About"
-      #   url        = "/about/"
-      #   weight     = 3
-      [[languages.en.menu.main]]
-        identifier = "search"
-        name       = "🔍︎"
-        url        = "/search/"
-        weight     = 4
-
-# Markdown 渲染器配置
 [markup]
-  [markup.goldmark.renderer]
-    unsafe = true # 允许渲染原始 HTML
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
-# 输出格式配置
-[outputs]
-  home = ["HTML", "RSS", "JSON"] # 首页输出格式
+[menu]
+  [[menu.main]]
+    identifier = "notes"
+    name       = "Notes"
+    pageRef    = "/notes"
+    weight     = 1
+  [[menu.main]]
+    name   = "Search"
+    weight = 2
+    [menu.main.params]
+      type = "search"
+
+
+[params]
+  description = "Qi's repository, which is used to store personal results"
+  dateFormat  = "2006-01-02"
+  displayUpdatedDate = true
+  [params.navbar]
+    [params.navbar.logo]
+      path = "favicon.svg"
+      dark = "favicon.svg"
+  [params.footer]
+    displayCopyright = true
+  [params.editURL]
+    enable = false
+  [params.blog]
+    [params.blog.list]
+      displayTags = true
+    [params.blog.article]
+      displayPagination = true
