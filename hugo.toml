@@ -1,6 +1,6 @@
-baseURL      = 'https://qisrepo.top/'
-languageCode = 'zh-CN'
-title        = 'QisRepo'
+baseURL      = "https://qisrepo.top/"
+languageCode = "zh-CN"
+title        = "QisRepo"
 theme        = "hextra"
 
 defaultContentLanguage = "zh-CN"
@@ -14,7 +14,7 @@ hasCJKLanguage = true
 enableInlineShortcodes = true
 
 [outputs]
-  home    = ["html", "llms"]
+  home    = ["html"]
   page    = ["html"]
   section = ["html", "rss"]
 
