@@ -2,6 +2,8 @@
 title: "笔记"
 cascade:
   type: blog
+  categories:
+    - 笔记
 ---
 
 <div style="text-align: center; margin-top: 1em;">

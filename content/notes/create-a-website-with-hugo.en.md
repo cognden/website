@@ -2,11 +2,11 @@
 title: Create a Website With Hugo
 date: 2025-06-22T10:04:21+08:00
 tags:
-  - logs
   - hugo
 showToc: true
 TocOpen: true
 draft: false
+description: This article will introduce how to create a static website using Hugo and configure the PaperMod theme.
 summary: This article will introduce how to create a static website using Hugo and configure the PaperMod theme.
 ---
 

@@ -2,7 +2,6 @@
 title: Selenium 的 PO 模式
 date: 2025-07-31T09:12:23+08:00
 tags:
-  - 笔记
   - 测试工具
 showToc: true
 TocOpen: true

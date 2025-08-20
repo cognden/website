@@ -2,11 +2,11 @@
 title: Membuat Situs Web dengan Hugo
 date: 2025-06-22T10:03:29+08:00
 tags:
-  - logs
   - hugo
 showToc: true
 TocOpen: true
 draft: false
+description: Artikel ini akan memperkenalkan cara membuat situs web statis menggunakan Hugo dan mengkonfigurasi tema PaperMod.
 summary: Artikel ini akan memperkenalkan cara membuat situs web statis menggunakan Hugo dan mengkonfigurasi tema PaperMod.
 ---
 

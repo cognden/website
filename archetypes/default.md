@@ -1,7 +1,10 @@
 ---
 title: {{ replace .File.ContentBaseName "-" " " | title }}
 date: {{ .Date }}
-tags: ["draft"]
+category: draft
+tags:
+  - draft
 draft: true
-description: "Desc Text."
+description: Desc Text.
+summary: Summarize text manually.
 ---
