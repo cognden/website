@@ -2,11 +2,11 @@
 title: Membuat Situs Web dengan Hugo
 date: 2025-06-22T10:03:29+08:00
 tags:
-  - logs
   - hugo
 showToc: true
 TocOpen: true
 draft: false
+description: Artikel ini akan memperkenalkan cara membuat situs web statis menggunakan Hugo dan mengkonfigurasi tema PaperMod.
 summary: Artikel ini akan memperkenalkan cara membuat situs web statis menggunakan Hugo dan mengkonfigurasi tema PaperMod.
 ---
 
@@ -60,62 +60,64 @@ Pada saat ini, Anda dapat mengunjungi `http://localhost:1313/` di browser untuk 
 
 File konfigurasi inti Hugo adalah `hugo.toml`, yang menentukan perilaku dasar situs web. Kita dapat memodifikasinya sesuai kebutuhan.
 
-> [!example]- Berikut adalah konfigurasi lengkap
->
-> ```toml  
-> # Konfigurasi global dasar situs web  
-> baseURL                = "https://example.org/" # Menetapkan URL root situs web untuk tautan absolut; ubah ke domain aktual saat deployment  
-> languageCode           = "id"                   # Menentukan kode bahasa konten, digunakan untuk atribut HTML lang dan pengaturan bahasa  
-> title                  = "ExampleSite"          # Judul utama situs web, biasanya ditampilkan di tab browser dan halaman utama  
-> theme                  = "PaperMod"             # Nama tema yang digunakan, menentukan tampilan situs web  
->   
-> # Konfigurasi sumber daya ikon situs web  
-> [assets]  
->   # Ikon ditempatkan di direktori static/  
->   favicon          = "/favicon.ico"          # Ikon favicon utama, biasanya ditampilkan di tab browser  
->   favicon16x16     = "/favicon-16x16.png"    # Ikon favicon 16x16 pixel, cocok untuk perangkat resolusi rendah  
->   favicon32x32     = "/favicon-32x32.png"    # Ikon favicon 32x32 pixel, memberikan tampilan definisi lebih tinggi  
->   apple_touch_icon = "/apple-touch-icon.png" # Ikon untuk layar beranda perangkat Apple  
->   
-> # Konfigurasi parameter tema, mempengaruhi tampilan dan perilaku fungsional  
-> [params]  
->   # Pengaturan SEO, membantu optimisasi mesin pencari  
->   title       = "ExampleSite"             # Menetapkan judul situs web, ditampilkan di tab browser dan hasil pencarian  
->   description = "ExampleSite description" # Deskripsi singkat situs web, digunakan untuk ringkasan pencarian  
->   keywords    = ["Blog", "Portfolio"]     # Daftar kata kunci terkait untuk meningkatkan relevansi pencarian  
->   
->   # Konfigurasi perilaku dasar situs web  
->   DateFormat   = "2006-01-02" # Menetapkan gaya pemformatan tanggal, digunakan untuk waktu publikasi artikel  
->   defaultTheme = "auto"       # Menetapkan mode tema default: "auto" mengikuti sistem, atau bisa diubah ke "light"/"dark"  
->   
->   # Informasi sambutan halaman utama  
->   [params.homeInfoParams]  
->     Title   = "Hi there 👋"  
->     Content = "Welcome to my blog"  
->   
-> # Konfigurasi menu global, berlaku untuk semua bahasa  
-> [menu]  
->   [[menu.main]] # Mendefinisikan item menu utama  
->     identifier = "posts"   # Pengidentifikasi item menu  
->     name       = "Tentang"      # Nama item menu  
->     url        = "/posts/" # Tautan item menu  
->     weight     = 1         # Bobot item menu, digunakan untuk pengurutan  
->   [[menu.main]]  
->     identifier = "tags"  
->     name       = "Tags"  
->     url        = "/tags/"  
->     weight     = 2  
->   [[menu.main]]  
->     identifier = "search"  
->     name       = "Pencarian"  
->     url        = "/search/"  
->     weight     = 3  
->   
-> # Pengaturan format output  
-> [outputs]  
->   # Menyediakan dukungan fungsi pencarian  
->   home = ["HTML", "RSS", "JSON"]  
-> ```
+{{% details title="Berikut adalah konfigurasi lengkap" closed="true" %}}
+
+```toml  
+# Konfigurasi global dasar situs web  
+baseURL                = "https://example.org/" # Menetapkan URL root situs web untuk tautan absolut; ubah ke domain aktual saat deployment  
+languageCode           = "id"                   # Menentukan kode bahasa konten, digunakan untuk atribut HTML lang dan pengaturan bahasa  
+title                  = "ExampleSite"          # Judul utama situs web, biasanya ditampilkan di tab browser dan halaman utama  
+theme                  = "PaperMod"             # Nama tema yang digunakan, menentukan tampilan situs web  
+  
+# Konfigurasi sumber daya ikon situs web  
+[assets]  
+  # Ikon ditempatkan di direktori static/  
+  favicon          = "/favicon.ico"          # Ikon favicon utama, biasanya ditampilkan di tab browser  
+  favicon16x16     = "/favicon-16x16.png"    # Ikon favicon 16x16 pixel, cocok untuk perangkat resolusi rendah  
+  favicon32x32     = "/favicon-32x32.png"    # Ikon favicon 32x32 pixel, memberikan tampilan definisi lebih tinggi  
+  apple_touch_icon = "/apple-touch-icon.png" # Ikon untuk layar beranda perangkat Apple  
+  
+# Konfigurasi parameter tema, mempengaruhi tampilan dan perilaku fungsional  
+[params]  
+  # Pengaturan SEO, membantu optimisasi mesin pencari  
+  title       = "ExampleSite"             # Menetapkan judul situs web, ditampilkan di tab browser dan hasil pencarian  
+  description = "ExampleSite description" # Deskripsi singkat situs web, digunakan untuk ringkasan pencarian  
+  keywords    = ["Blog", "Portfolio"]     # Daftar kata kunci terkait untuk meningkatkan relevansi pencarian  
+  
+  # Konfigurasi perilaku dasar situs web  
+  DateFormat   = "2006-01-02" # Menetapkan gaya pemformatan tanggal, digunakan untuk waktu publikasi artikel  
+  defaultTheme = "auto"       # Menetapkan mode tema default: "auto" mengikuti sistem, atau bisa diubah ke "light"/"dark"  
+  
+  # Informasi sambutan halaman utama  
+  [params.homeInfoParams]  
+    Title   = "Hi there 👋"  
+    Content = "Welcome to my blog"  
+  
+# Konfigurasi menu global, berlaku untuk semua bahasa  
+[menu]  
+  [[menu.main]] # Mendefinisikan item menu utama  
+    identifier = "posts"   # Pengidentifikasi item menu  
+    name       = "Tentang"      # Nama item menu  
+    url        = "/posts/" # Tautan item menu  
+    weight     = 1         # Bobot item menu, digunakan untuk pengurutan  
+  [[menu.main]]  
+    identifier = "tags"  
+    name       = "Tags"  
+    url        = "/tags/"  
+    weight     = 2  
+  [[menu.main]]  
+    identifier = "search"  
+    name       = "Pencarian"  
+    url        = "/search/"  
+    weight     = 3  
+  
+# Pengaturan format output  
+[outputs]  
+  # Menyediakan dukungan fungsi pencarian  
+  home = ["HTML", "RSS", "JSON"]  
+```
+
+{{% /details %}}
 
 #### Pengaturan Informasi Dasar Situs Web
 

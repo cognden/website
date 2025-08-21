@@ -2,11 +2,11 @@
 title: 使用 HUGO 搭建网站
 date: 2025-06-22T09:54:23+08:00
 tags:
-  - 日志
   - hugo
 showToc: true
 TocOpen: true
 draft: false
+description: 本篇文章将介绍如何使用 Hugo 搭建一个静态网站，并配置 PaperMod 主题。
 summary: 本篇文章将介绍如何使用 Hugo 搭建一个静态网站，并配置 PaperMod 主题。
 ---
 
@@ -62,62 +62,64 @@ hugo server
 
 Hugo 的核心配置文件是 `hugo.toml`，它决定了网站的基本行为。我们可以根据需要对其进行修改。
 
-> [!example]- 这里是完整配置
->
-> ```toml
-> # 网站的基础全局配置
-> baseURL                = "https://example.org/" # 设置网站的根 URL，用于生成绝对链接，部署时应更改为实际域名
-> languageCode           = "zh"                   # 指定网站内容语言编码，用于 HTML lang 属性及语言相关的设置
-> title                  = "ExampleSite"          # 网站主标题，通常显示在浏览器标签页和首页
-> theme                  = "PaperMod"             # 使用的主题名称，决定了网站外观风格
->
-> # 网站图标的资源配置，用于定义不同尺寸和用途的网站图标
-> [assets]
->   # 图标放在 static/ 目录下
->   favicon          = "/favicon.ico"          # 主要 favicon 图标，通常显示在浏览器标签页上
->   favicon16x16     = "/favicon-16x16.png"    # 16x16 像素大小的 favicon，适用于低分辨率设备
->   favicon32x32     = "/favicon-32x32.png"    # 32x32 像素大小的 favicon，提供更高清显示
->   apple_touch_icon = "/apple-touch-icon.png" # Apple 设备上添加到主屏幕时使用的图标
->
-> # 主题参数配置，影响网站外观与功能行为
-> [params]
->   # SEO 相关设置，有助于搜索引擎优化
->   title       = "ExampleSite"             # 设置网站标题，显示在浏览器标签和搜索引擎结果中
->   description = "ExampleSite description" # 网站的简要描述，用于搜索引擎摘要展示
->   keywords    = ["Blog", "Portfolio"]     # 定义网站相关的关键词列表，提升搜索相关性
->
->   # 基础网站行为配置
->   DateFormat   = "2006-01-02" # 设置日期格式化样式，用于文章发布时间等时间字段的显示
->   defaultTheme = "auto"       # 设置默认主题模式："auto" 表示跟随系统明暗设置，也可以设为 "light" 或 "dark"
->
->   # 首页欢迎信息
->   [params.homeInfoParams]
->     Title   = "Hi there \U0001F44B"
->     Content = "Welcome to my blog"
->
-> # 全局导航菜单配置，适用于所有语言环境下的主菜单项
-> [menu]
->   [[menu.main]] # 定义一个主菜单项
->     identifier = "posts"   # 菜单项标识符
->     name       = "文章"      # 菜单项名称
->     url        = "/posts/" # 菜单项链接
->     weight     = 1         # 菜单项权重，用于排序
->   [[menu.main]]
->     identifier = "tags"
->     name       = "标签"
->     url        = "/tags/"
->     weight     = 2
->   [[menu.main]]
->     identifier = "search"
->     name       = "搜索"
->     url        = "/search/"
->     weight     = 3
->
-> # 输出格式设置
-> [outputs]
->   # 为搜索功能提供支持
->   home = ["HTML", "RSS", "JSON"]
-> ```
+{{% details title="这里是完整配置" closed="true" %}}
+
+```toml
+# 网站的基础全局配置
+baseURL                = "https://example.org/" # 设置网站的根 URL，用于生成绝对链接，部署时应更改为实际域名
+languageCode           = "zh"                   # 指定网站内容语言编码，用于 HTML lang 属性及语言相关的设置
+title                  = "ExampleSite"          # 网站主标题，通常显示在浏览器标签页和首页
+theme                  = "PaperMod"             # 使用的主题名称，决定了网站外观风格
+
+# 网站图标的资源配置，用于定义不同尺寸和用途的网站图标
+[assets]
+  # 图标放在 static/ 目录下
+  favicon          = "/favicon.ico"          # 主要 favicon 图标，通常显示在浏览器标签页上
+  favicon16x16     = "/favicon-16x16.png"    # 16x16 像素大小的 favicon，适用于低分辨率设备
+  favicon32x32     = "/favicon-32x32.png"    # 32x32 像素大小的 favicon，提供更高清显示
+  apple_touch_icon = "/apple-touch-icon.png" # Apple 设备上添加到主屏幕时使用的图标
+
+# 主题参数配置，影响网站外观与功能行为
+[params]
+  # SEO 相关设置，有助于搜索引擎优化
+  title       = "ExampleSite"             # 设置网站标题，显示在浏览器标签和搜索引擎结果中
+  description = "ExampleSite description" # 网站的简要描述，用于搜索引擎摘要展示
+  keywords    = ["Blog", "Portfolio"]     # 定义网站相关的关键词列表，提升搜索相关性
+
+  # 基础网站行为配置
+  DateFormat   = "2006-01-02" # 设置日期格式化样式，用于文章发布时间等时间字段的显示
+  defaultTheme = "auto"       # 设置默认主题模式："auto" 表示跟随系统明暗设置，也可以设为 "light" 或 "dark"
+
+  # 首页欢迎信息
+  [params.homeInfoParams]
+    Title   = "Hi there \U0001F44B"
+    Content = "Welcome to my blog"
+
+# 全局导航菜单配置，适用于所有语言环境下的主菜单项
+[menu]
+  [[menu.main]] # 定义一个主菜单项
+    identifier = "posts"   # 菜单项标识符
+    name       = "文章"      # 菜单项名称
+    url        = "/posts/" # 菜单项链接
+    weight     = 1         # 菜单项权重，用于排序
+  [[menu.main]]
+    identifier = "tags"
+    name       = "标签"
+    url        = "/tags/"
+    weight     = 2
+  [[menu.main]]
+    identifier = "search"
+    name       = "搜索"
+    url        = "/search/"
+    weight     = 3
+
+# 输出格式设置
+[outputs]
+  # 为搜索功能提供支持
+  home = ["HTML", "RSS", "JSON"]
+```
+
+{{% /details %}}
 
 #### 网站基本信息设置
 
@@ -225,7 +227,7 @@ placeholder: "这里可以输入..."
   home = ["HTML", "RSS", "JSON"]
 ```
 
-> 这样，首页不仅会生成 HTML 页面，还会提供 RSS 订阅和 JSON 数据接口。
+这样，首页不仅会生成 HTML 页面，还会提供 RSS 订阅和 JSON 数据接口。
 
 ---
 
@@ -321,8 +323,7 @@ content/
 
 - `zh/search.md`：
 
-  ```yaml
-
+```yaml
 ---
 
 title: " 搜索 "
@@ -330,19 +331,18 @@ layout: "search"
 summary: " 搜索页面 "
 placeholder: " 这里可以输入..."
 ---
-
-  ```
+```
 
 - `en/search.md`：
 
-  ```yaml
+```yaml
 ---
 title: "Search"
 layout: "search"
 summary: "Search page"
 placeholder: "You can type here..."
 ---
-  ```
+```
 
 然后对 `hugo.toml` 做最后的修改，设置默认显示语言，以及指定各语言所在目录。
 

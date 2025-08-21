@@ -2,7 +2,6 @@
 title: Pola PO Selenium
 date: 2025-07-31T09:18:36+08:00
 tags:
-  - catatan
   - alat-pengujian
 showToc: true
 TocOpen: true

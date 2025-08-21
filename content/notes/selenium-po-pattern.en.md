@@ -2,7 +2,6 @@
 title: Selenium‘s PO Pattern
 date: 2025-07-31T09:18:28+08:00
 tags:
-  - note
   - testing-tools
 showToc: true
 TocOpen: true
