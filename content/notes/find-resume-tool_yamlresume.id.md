@@ -16,7 +16,7 @@ Sama seperti Markdown, Anda hanya perlu menandai konten dengan penanda, tanpa pe
 
 Karena saya tidak menguasai sintaks LaTeX dan ingin membuat resume dengan cepat, saya kemudian menemukan [YAMLResume](https://yamlresume.dev/), sebuah alat yang lebih mudah digunakan. Dengan menggunakan sintaks konfigurasi YAML, penulisan LaTeX menjadi disederhanakan, namun pada dasarnya, konten YAML akan dikonversi ke LaTeX, kemudian file LaTeX akan dikompilasi.
 
-![Gambar contoh YAMLResume](https://img2024.cnblogs.com/blog/3054353/202510/3054353-20251006153800533-1258055200.png)
+![Gambar contoh YAMLResume](https://img.qisrepo.top/img-yamlresume-yaml-and-pdf.webp)
 
 Pemasangannya juga sangat mudah, karena menyediakan gambar Docker. Anda hanya perlu mengunduh dan menjalankannya tanpa khawatir tentang masalah lingkungan, meskipun penggunaan ruangnya cukup besar, sekitar 3G.
 

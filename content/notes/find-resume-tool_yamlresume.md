@@ -16,7 +16,7 @@ summary: 本文介绍了YAMLResume工具的使用方法，包括通过Docker命�
 
 鉴于我并不会 LaTeX 语法，同时也想快速制作简历，所以接下来我找到了 [YAMLResume](https://yamlresume.dev/)，更为易用的工具。通过使用 yaml 配置语法，简化 LaTeX 的编写，但实际是将 yaml 内容转换为 LaTeX，然后编译 LaTeX 文件。
 
-![YAMLResume 的效果图](https://img2024.cnblogs.com/blog/3054353/202510/3054353-20251006153800533-1258055200.png)
+![YAMLResume 的效果图](https://img.qisrepo.top/img-yamlresume-yaml-and-pdf.webp)
 
 安装也特别的方便，提供了 docker 镜像，只需要拉取运行，无需担心环境问题，就是空间占用比较大，3G 左右。
 

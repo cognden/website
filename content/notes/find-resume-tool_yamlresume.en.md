@@ -16,7 +16,7 @@ Similar to Markdown, with LaTeX, you just need to mark up the content with tags,
 
 Since I don't know LaTeX syntax and wanted to create a resume quickly, I then found [YAMLResume](https://yamlresume.dev/), a more user-friendly tool. It simplifies LaTeX writing using YAML configuration syntax, but essentially converts YAML content into LaTeX and then compiles the LaTeX file.
 
-![Rendering effect of YAMLResume](https://img2024.cnblogs.com/blog/3054353/202510/3054353-20251006153800533-1258055200.png)
+![Rendering effect of YAMLResume](https://img.qisrepo.top/img-yamlresume-yaml-and-pdf.webp)
 
 Installation is particularly convenient as it provides a Docker image. You just need to pull and run it, without worrying about environment issues. However, it takes up a relatively large amount of space, around 3GB.
 
