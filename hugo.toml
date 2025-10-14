@@ -14,7 +14,7 @@ hasCJKLanguage = true
 enableInlineShortcodes = true
 
 [outputs]
-  home    = ["html"]
+  home    = ["html", "rss", "llms"]
   page    = ["html"]
   section = ["html", "rss"]
 
@@ -62,12 +62,10 @@ enableInlineShortcodes = true
     url = "/tags/"
     weight = 2
 
-
-
 [params]
-  description = "Qi's repository, which is used to store personal results"
   dateFormat  = "2006-01-02"
   displayUpdatedDate = true
+  externalLinkDecoration = true
   [params.navbar]
     [params.navbar.logo]
       path = "favicon.svg"
@@ -81,3 +79,21 @@ enableInlineShortcodes = true
       displayTags = true
     [params.blog.article]
       displayPagination = true
+  [params.comments]
+    enable = true
+    type   = "giscus"
+    [params.comments.giscus]
+      repo       = "cognden/website"
+      repoId     = "R_kgDOOxy8JA"
+      category   = "Announcements"
+      categoryId = "DIC_kwDOOxy8JM4Cwn4w"
+
+# 为每种语言设置特定的描述
+[languages.en.params]
+  description = "QisRepo is a personal tech blog focused on documenting learning processes, sharing programming experiences, and showcasing project outcomes. It includes my technical explorations, practical experiences, and personal growth journey."
+
+[languages.id.params]
+  description = "QisRepo adalah blog teknologi pribadi yang berfokus pada dokumentasi proses pembelajaran, berbagi pengalaman pemrograman, dan menampilkan hasil proyek. Ini mencakup eksplorasi teknis, pengalaman praktis, dan perjalanan pertumbuhan pribadi saya."
+
+[languages.zh-cn.params]
+  description = "QisRepo 是一个个人技术博客，专注于记录学习过程、分享编程经验和展示项目成果。这里包含了我的技术探索、实践经验和个人成长轨迹。"
