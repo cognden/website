@@ -112,6 +112,12 @@ $RECYCLE.BIN/
 
 .idea/
 
-## Obsidian ##
-## Obsidian configuration file
+### Obsidian ###
+# Obsidian configuration file
 .obsidian/
+
+# Files deleted within Obsidian
+.trash/
+
+# Attachment storage location
+static/ob-attachment/
