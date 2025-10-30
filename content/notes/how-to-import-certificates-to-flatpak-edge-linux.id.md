@@ -3,7 +3,7 @@ title: Cara Mengimpor Sertifikat ke Browser Edge Flatpak di Linux
 date: 2025-10-30T16:55:01+08:00
 tags: 
   - Linux
-draft: true
+draft: false
 description: "Artikel ini memperkenalkan dua metode untuk mengimpor sertifikat ke browser Edge versi Flatpak di Linux, menyelesaikan masalah yang disebabkan oleh kurangnya opsi manajemen sertifikat di Flatpak Edge."
 summary: "Saat menggunakan browser Flatpak Edge, Anda mungkin mengalami masalah fungsi manajemen sertifikat yang hilang. Artikel ini menyediakan dua solusi: 1) Impor sertifikat secara grafis melalui tautan internal edge://certificate-manager/localcerts; 2) Salin file sertifikat ke direktori kepercayaan sistem /etc/pki/ca-trust/source/anchors/ dan jalankan perintah update-ca-trust. Metode kedua sangat cocok ketika metode pertama mengalami kesalahan impor."
 ---

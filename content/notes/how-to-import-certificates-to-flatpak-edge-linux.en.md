@@ -1,8 +1,9 @@
 ---
 title: How to Import Certificates to Flatpak Edge Browser on Linux
 date: 2025-10-30T16:54:49+08:00
-tags: [Linux]
-draft: true
+tags: 
+  - Linux
+draft: false
 description: "This article introduces two methods for importing certificates into the Flatpak version of Edge browser on Linux, solving the problem caused by the lack of certificate management options in Flatpak Edge."
 summary: "When using the Flatpak version of Edge browser, you may encounter the problem of missing certificate management functions. This article provides two solutions: 1) Import certificates graphically through the internal link edge://certificate-manager/localcerts; 2) Copy the certificate file to the system trust directory /etc/pki/ca-trust/source/anchors/ and execute the update-ca-trust command. The second method is particularly suitable when the first method encounters import errors."
 ---
