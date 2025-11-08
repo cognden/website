@@ -38,6 +38,12 @@ enableInlineShortcodes = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
 
 [menu]
   [[menu.main]]
@@ -87,6 +93,8 @@ enableInlineShortcodes = true
       repoId     = "R_kgDOOxy8JA"
       category   = "Announcements"
       categoryId = "DIC_kwDOOxy8JM4Cwn4w"
+  [params.math]
+    engine = "mathjax"
 
 # 为每种语言设置特定的描述
 [languages.en.params]
